@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The top of the layout hierarchy-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ConstraintLayout to allow more flexible layouts-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.unsplashimageapi.overview.PriorityFragment">
+
+        <!-- The Search Box-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_field"
+            style="@style/Widget.Vorti.TextInputLayout.OutlinedBox"
+            android:hint="@string/search"
+            android:layout_marginTop="50dp"
+            app:startIconDrawable="@drawable/ic_baseline_search_24"
+
+            app:endIconMode="clear_text"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="35"
+
+            app:boxCornerRadiusTopStart="@dimen/textRadius"
+            app:boxCornerRadiusTopEnd="@dimen/textRadius"
+            app:boxCornerRadiusBottomStart="@dimen/textRadius"
+            app:boxCornerRadiusBottomEnd="@dimen/textRadius"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/query_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins"
+                android:inputType="textPersonName|text"
+                android:textSize="18sp"
+                android:maxLines="1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
