@@ -5,11 +5,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- To provide data access points-->
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.example.unsplashimageapi.prioritySetup.PriorityViewModel" />
+
+        <variable
+            name="PriorityFragment"
+            type="com.example.unsplashimageapi.prioritySetup.PriorityFragment" />
+    </data>
+
     <!-- ConstraintLayout to allow more flexible layouts-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.unsplashimageapi.overview.PriorityFragment">
+        android:padding="12dp"
+        tools:context="com.example.unsplashimageapi.prioritySetup.PriorityFragment">
 
         <!-- The Search Box-->
         <com.google.android.material.textfield.TextInputLayout
@@ -30,7 +44,7 @@
             app:boxCornerRadiusBottomEnd="@dimen/textRadius"
 
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/Go"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -39,14 +53,36 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins"
                 android:inputType="textPersonName|text"
-                android:textSize="18sp"
+                android:textSize="22sp"
                 android:maxLines="1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- The ENTER button -->
+        <Button
+            android:id="@+id/Go"
+            style="@style/Widget.Vorti.Button"
+            android:onClick="@{() -> PriorityFragment.executeSearch()}"
+            android:layout_marginTop="50dp"
+            android:text="@string/go"
+            app:cornerRadius="@dimen/textRadius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/search_field"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-
+        <!-- The Image Item-->
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="100dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:src="@drawable/real"
+            app:layout_constraintTop_toBottomOf="@id/search_field"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/the_search_result" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

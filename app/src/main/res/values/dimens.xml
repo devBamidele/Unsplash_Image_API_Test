@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Custom dimensions-->
     <dimen name="textRadius">15dp</dimen>
+    <dimen name="imageLength">500dp</dimen>
+    <dimen name="buttonText">20sp</dimen>
+    <dimen name="buttonElevation">10dp</dimen>
+    <dimen name="cornerRadius">20dp</dimen>
+
 </resources>

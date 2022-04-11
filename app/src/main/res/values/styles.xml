@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Custom styles for material components -->
     <style name="Widget.Vorti.TextInputLayout.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">400dp</item>
         <item name="android:layout_height">60dp</item>
@@ -13,4 +14,12 @@
         <item name="errorIconDrawable">@drawable/ic_error</item>
         <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
     </style>
+
+    <style name="Widget.Vorti.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_width">120dp</item>
+        <item name="android:textSize">@dimen/buttonText</item>
+        <item name="android:elevation">@dimen/buttonElevation</item>
+    </style>
+
 </resources>
