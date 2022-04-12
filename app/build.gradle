@@ -36,9 +36,6 @@ android {
 
 dependencies {
 
-    // Unsplash Photo Picker
-    implementation 'com.github.unsplash:unsplash-photopicker-android:1.0.1'
-
     // Moshi
     implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
 

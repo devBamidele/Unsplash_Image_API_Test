@@ -31,12 +31,16 @@
             style="@style/Widget.Vorti.TextInputLayout.OutlinedBox"
             android:hint="@string/search"
             android:layout_marginTop="50dp"
+
+            app:errorEnabled="true"
+
             app:startIconDrawable="@drawable/ic_baseline_search_24"
 
             app:endIconMode="clear_text"
 
             app:counterEnabled="true"
-            app:counterMaxLength="35"
+            app:counterMaxLength="30"
+
 
             app:boxCornerRadiusTopStart="@dimen/textRadius"
             app:boxCornerRadiusTopEnd="@dimen/textRadius"
@@ -53,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins"
                 android:inputType="textPersonName|text"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:maxLines="1"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +66,6 @@
         <Button
             android:id="@+id/Go"
             style="@style/Widget.Vorti.Button"
-            android:onClick="@{() -> PriorityFragment.executeSearch()}"
             android:layout_marginTop="50dp"
             android:text="@string/go"
             app:cornerRadius="@dimen/textRadius"
