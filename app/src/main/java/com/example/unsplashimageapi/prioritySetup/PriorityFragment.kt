@@ -36,9 +36,6 @@ class PriorityFragment : Fragment() {
         binding!!.viewModel = viewModel
 
 
-
-        //.doOnTextChanged
-
         // Finally returns the binding
         return binding!!.root
     }

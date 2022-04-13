@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/drawable/ic_broken_image.xml" value="0.1" />
         <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/drawable/ic_error.xml" value="0.155" />
+        <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/drawable/loading_img.xml" value="0.1" />
         <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/layout/fragment_priority.xml" value="0.25" />
+        <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/layout/fragment_priority.xml" value="0.5" />
         <entry key="..\:/Users/D A M I/AndroidStudioProjects/UnsplashImageAPI/app/src/main/res/layout/priority_fragment.xml" value="0.22" />
       </map>
     </option>

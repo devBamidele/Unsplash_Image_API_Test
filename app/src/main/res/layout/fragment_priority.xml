@@ -7,15 +7,14 @@
 
     <!-- To provide data access points-->
     <data>
-        <import type="android.view.View"/>
-
         <variable
             name="viewModel"
             type="com.example.unsplashimageapi.prioritySetup.PriorityViewModel" />
 
         <variable
-            name="PriorityFragment"
-            type="com.example.unsplashimageapi.prioritySetup.PriorityFragment" />
+            name="photo"
+            type="com.example.unsplashimageapi.network.Model.Url" />
+
     </data>
 
     <!-- ConstraintLayout to allow more flexible layouts-->
@@ -41,6 +40,8 @@
             app:counterEnabled="true"
             app:counterMaxLength="30"
 
+            app:errorIconDrawable="@drawable/ic_error"
+            app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
 
             app:boxCornerRadiusTopStart="@dimen/textRadius"
             app:boxCornerRadiusTopEnd="@dimen/textRadius"
@@ -57,8 +58,8 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins"
                 android:inputType="textPersonName|text"
-                android:textSize="18sp"
-                android:maxLines="1"/>
+                android:maxLines="1"
+                android:textSize="18sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,13 +80,28 @@
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_marginTop="100dp"
-            android:scaleType="centerCrop"
             android:adjustViewBounds="true"
-            android:src="@drawable/real"
+            android:contentDescription="@string/the_search_result"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{photo.raw}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_field"
+            tools:src="@drawable/real" />
+
+        <TextView
+            android:id="@+id/JsonString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{viewModel.jsonString}"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/Black_Coral"
+            android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@id/image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/the_search_result" />
+            tools:text="The placeholder text"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

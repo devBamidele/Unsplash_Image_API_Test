@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.unsplashimageapi.network.UnsplashApi
-import com.example.unsplashimageapi.network.UnsplashPhoto
+import com.example.unsplashimageapi.network.Model
 import kotlinx.coroutines.launch
 
 /**
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 enum class UnsplashApiStatus { LOADING, ERROR, DONE }
 
 /**
- * The [viewModel] that is attached to the [PriorityFragment]
+ * The [ViewModel] that is attached to the [PriorityFragment]
  */
 class PriorityViewModel : ViewModel() {
 
@@ -22,9 +22,18 @@ class PriorityViewModel : ViewModel() {
     private val _query = MutableLiveData<String>()
     val query: LiveData<String> = _query
 
-    // The
-    private val _photos = MutableLiveData<List<UnsplashPhoto>>()
-    val photos: LiveData<List<UnsplashPhoto>> = _photos
+    // To store the kotlin objects received in the predefined format
+    private val _photos = MutableLiveData<Model.UnsplashPhoto>()
+    val photos: LiveData<Model.UnsplashPhoto> = _photos
+
+
+    // For error handing
+    private val _jsonString = MutableLiveData<String>()
+    val jsonString: LiveData<String> = _jsonString
+
+
+    private val _url = MutableLiveData<Model.Url>()
+    val url : LiveData<Model.Url> = _url
 
 
     // The internal MutableLiveData that stores the status of the most recent request
@@ -43,25 +52,26 @@ class PriorityViewModel : ViewModel() {
      * The constructor
      */
     init {
+        getUnsplashPhoto()
         _query.value = ""
+        //_jsonString.value = "Just to check if the Json string works"
     }
 
     /**
-     * Return a single Unsplash Photo
+     * Return a list of UnsplashPhotos
      */
     private fun getUnsplashPhoto() {
-
         viewModelScope.launch {
-            _status.value = UnsplashApiStatus.LOADING
+            _jsonString.value = UnsplashApiStatus.LOADING.toString()
             try {
                 _photos.value = UnsplashApi.retrofitService.getPhotos()
-                _status.value = UnsplashApiStatus.DONE
+                _jsonString.value = UnsplashApiStatus.DONE.toString()
             } catch (e : Exception) {
-                _status.value = UnsplashApiStatus.ERROR
-                _photos.value = listOf()
+                _jsonString.value = e.localizedMessage
             }
         }
     }
+// the error message was "Required value 'url' missing at $.results[1]
 
     /**
      * Check if the query text meets some criteria

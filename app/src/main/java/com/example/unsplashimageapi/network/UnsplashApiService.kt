@@ -36,11 +36,11 @@ private val retrofit = Retrofit.Builder()
 
 interface UnsplashApiService {
     /**
-     * Returns a single [UnsplashPhoto] object
+     * Returns a single [Model] object
      * The @GET annotation indicates the end point
      */
     @GET("search/photos?query=london&per_page=1&client_id=$ACCESS_KEY")
-    suspend fun getPhotos(): List<UnsplashPhoto>
+    suspend fun getPhotos(): Model.UnsplashPhoto
 }
 
 object UnsplashApi {
