@@ -7,13 +7,18 @@
 
     <!-- To provide data access points-->
     <data>
+
         <variable
             name="viewModel"
             type="com.example.unsplashimageapi.prioritySetup.PriorityViewModel" />
 
         <variable
             name="photo"
-            type="com.example.unsplashimageapi.network.Model.Url" />
+            type="com.example.unsplashimageapi.network.Url" />
+
+        <variable
+            name="id"
+            type="com.example.unsplashimageapi.network.UnsplashPhoto" />
 
     </data>
 
@@ -83,11 +88,11 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/the_search_result"
             android:scaleType="centerCrop"
-            app:imageUrl="@{photo.raw}"
+            app:imageUrl="@{photo.regular}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_field"
-            tools:src="@drawable/real" />
+            tools:srcCompat="@drawable/real" />
 
         <TextView
             android:id="@+id/JsonString"

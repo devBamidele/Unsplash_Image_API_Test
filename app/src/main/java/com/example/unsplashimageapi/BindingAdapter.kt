@@ -23,7 +23,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
             // The loading animation
             placeholder(R.drawable.loading_animation)
 
-            // The error image used when coil is unable to get the iamge
+            // The error image used when coil is unable to get the image
             error(R.drawable.ic_broken_image)
 
         }
